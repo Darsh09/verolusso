@@ -31,13 +31,15 @@ def website():
 def classes():
     return render_template('classes.html')
 
-@app.route('/search', methods=['POST'])
+@app.route('/search', methods=['GET','POST'])
 def main():
     
     search_query=request.json['search']
     numberOfImages=request.json['number']
     
     response = google_images_download.googleimagesdownload()
+    
+    # print(os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop'))
     
     # def downloadimages(query):
         
@@ -47,7 +49,8 @@ def main():
                 "print_urls":True,
                 "size": "medium",
                 "aspect_ratio":"panoramic",
-                "output_directory": os.path.join(os.path.join(os.environ['HOME']), 'Desktop')}
+                "output_directory": os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')}
+                # "output_directory": os.path.join(os.path.join(os.environ['HOME']), 'Desktop')}
     # try:
     response.download(arguments)
     return render_template('google.html')
@@ -76,10 +79,18 @@ def main():
     # downloadimages(search_query)
     # print()
     
-# @app.route('/instasearch', methods=['POST'])
-# def instasearch():
+@app.route('/bsearch', methods=['POST'])
+def bsearch():
+    search_query=request.json['search']
+    numberOfImages=request.json['number']
     
-#     return NoneType
+    from bing_image_downloader import downloader
+    
+    downloader.download(search_query, limit=int(numberOfImages),  output_dir=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop'), adult_filter_off=True, force_replace=False, timeout=60, verbose=True)
+    
+    return jsonify({ 'msg': 'Successful' })
+    
+    
 
 if __name__ == '__main__':
     app.run(debug=False)
