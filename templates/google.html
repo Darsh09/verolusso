@@ -16,7 +16,7 @@
     <body>
         <center><h1>Google Images</h1></center>
         <center>
-            <form>
+            <form action="downloadGoogleImages.py" method="post">
                 Search: <input type="text" placeholder="Search" name="search" id="search">
                 Number: <input type="number" plcaholder="Number of Images" name="qty" id="qty">
                 <input type="button" onClick="formSubmit()" value="Download">
@@ -26,7 +26,7 @@
         <script>
 
             function formSubmit(){
-                fetch('https://verolusso.herokuapp.com/search', {
+                fetch('http://localhost:5000/bsearch', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json'
@@ -38,7 +38,7 @@
                         }
                         )
                   })
-//                   .then(res => console.log(res));
+                  .then(res => console.log(res));
             }
 
         </script>
