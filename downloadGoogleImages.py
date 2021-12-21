@@ -88,7 +88,7 @@ def bsearch():
     
     from bing_image_downloader import downloader
     
-    downloader.download(search_query, limit=int(numberOfImages),  output_dir=os.path.join(os.path.join(os.environ['HOME']), 'Desktop', 'downloads'), adult_filter_off=True, force_replace=False, timeout=60, verbose=True)
+    downloader.download(search_query, limit=int(numberOfImages),  output_dir=os.path.join(os.path.join(os.environ['HOME']), 'Desktop'), adult_filter_off=True, force_replace=False, timeout=60, verbose=True)
     
     return jsonify({ 'msg': 'Successful' })
     
