@@ -47,7 +47,6 @@ def main():
                 "print_urls":True,
                 "size": "medium",
                 "aspect_ratio":"panoramic",
-                "print_paths": True,
                 "output_directory": os.path.join(os.path.join(os.environ['HOME']), 'Desktop')}
     # try:
     response.download(arguments)
