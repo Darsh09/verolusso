@@ -9,7 +9,7 @@ flask-cors = "*"
 requests = "*"
 gunicorn = "*"
 google-images-download = {git = "https://github.com/Joeclinton1/google-images-download"}
-bing-image-downloader = {git = "https://github.com/gurugaurav/bing_image_downloader"}
+bing-image-downloader = "*"
 
 [dev-packages]
 
