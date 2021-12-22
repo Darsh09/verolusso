@@ -88,7 +88,7 @@ def bsearch():
     
     import pathlib
 
-    desktop = pathlib.Path.home() / 'Desktop'
+    desktop = str(pathlib.Path.home())
     
     from bing_image_downloader import downloader
     
