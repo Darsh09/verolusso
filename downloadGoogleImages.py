@@ -84,7 +84,7 @@ def bsearch():
     search_query=request.json['search']
     numberOfImages=request.json['number']
     
-    print(os.path.join(os.path.join(os.environ['HOME']), 'Desktop'))
+#     print(os.path.join(os.path.join(os.environ['HOME']), 'Desktop'))
     
     import pathlib
 
