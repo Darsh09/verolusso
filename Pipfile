@@ -10,6 +10,7 @@ requests = "*"
 gunicorn = "*"
 google-images-download = {git = "https://github.com/Joeclinton1/google-images-download"}
 bing-image-downloader = "*"
+instaloader = "*"
 
 [dev-packages]
 

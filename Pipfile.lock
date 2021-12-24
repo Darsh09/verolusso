@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "aba81fd7384995741f079fff82f0a12326e6c7d072d92adc70bd82f1ce1a3e8a"
+            "sha256": "6d4ef478feaf979ba59f3b9da35201a3ed885f9fa7f77cf8d0f3721ccad856dc"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -195,6 +195,13 @@
             ],
             "markers": "python_version >= '3'",
             "version": "==3.3"
+        },
+        "instaloader": {
+            "hashes": [
+                "sha256:c86985cacaa1a092ad0237a3c350a05d5a1ee21e13a22fba5f6e4a79a1a43dcd"
+            ],
+            "index": "pypi",
+            "version": "==4.8.2"
         },
         "itsdangerous": {
             "hashes": [
