@@ -95,7 +95,16 @@ def bsearch():
     downloader.download(search_query, limit=int(numberOfImages),  output_dir=desktop, adult_filter_off=True, force_replace=False, timeout=60, verbose=True)
     
     return jsonify({ 'msg': 'Successful' })
+
+@app.route('/instaprofile', methods=['GET', 'POST'])    
+def instasearch():
+    profile = request.json['profile']
     
+    import instaloader
+    
+    instaloader.Instaloader().download_profile(profile, profile_pic_only=False)
+    
+    return jsonify({ 'msg': 'Successful' })
     
 
 if __name__ == '__main__':
