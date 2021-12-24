@@ -7,9 +7,39 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <style>
+            h1{
+                margin-top: 35vh;
+            }
+        </style>
     </head>
     <body>
         
-        <script src="" async defer></script>
+        <center><h1>Instagram Images</h1></center>
+        <center>
+            <form action="downloadGoogleImages.py" method="post">
+                Profile: <input type="text" placeholder="Enter Profile" name="search" id="profile">
+                <input type="button" onClick="formSubmit()" value="Download">
+            </form>
+        </center>
+
+        <script>
+
+            function formSubmit(){
+                fetch('http://localhost:5000/instaprofile', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(
+                        {
+                            'profile': document.getElementById("profile").value
+                        }
+                        )
+                  })
+                  .then(res => console.log(res));
+            }
+
+        </script>
     </body>
 </html>
